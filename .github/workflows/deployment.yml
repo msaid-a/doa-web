@@ -77,8 +77,6 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} lint
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
-        with:
-          path: ./out
 
 
   # Deployment job
