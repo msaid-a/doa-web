@@ -4,6 +4,7 @@ import { IconComp } from '@components'
 import { GetServerSidePropsContext, GetServerSidePropsResult } from 'next'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
+
 type IData = {
   id: string,
   doa: string,

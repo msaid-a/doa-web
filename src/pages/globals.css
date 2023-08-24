@@ -106,20 +106,3 @@ a {
   }
 }
 
-@font-face{
-  font-family:'LPMQ';
-  src:url('https://kangismet.github.io/fonts/lpmq.eot');
-  src:url('https://kangismet.github.io/fonts/lpmq.eot?#iefix') format('embedded-opentype'),
-  url('https://kangismet.github.io/fonts/lpmq.ttf') format('truetype');
-  font-weight:400;
-  font-weight:normal;
-  font-display: swap;
-  }
-  .arab{
-    font-size: 26px;
-    line-height: 48px;
-    font-family: LPMQ,"Traditional Arabic",Tahoma,sans-serif;
-    font-weight: normal;
-    text-align: right;
-    direction: rtl;
-    }
