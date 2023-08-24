@@ -28,7 +28,9 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
-    steps:
+    steps: &check-linter
+      - name: Check Linter
+        run: ${{ steps.detect-package-manager.outputs.manager }} lint
       - name: Checkout
         uses: actions/checkout@v3
       - name: Detect package manager
@@ -73,8 +75,6 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-      - name: Check Linter
-        run: ${{ steps.detect-package-manager.outputs.manager }} lint
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Static HTML export with Next.js
@@ -83,6 +83,7 @@ jobs:
         uses: actions/upload-pages-artifact@v2
         with:
           path: ./out
+
 
   # Deployment job
   deploy:
